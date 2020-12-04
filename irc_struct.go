@@ -7,7 +7,6 @@ package irc
 import (
 	"context"
 	"crypto/tls"
-	"log"
 	"net"
 	"regexp"
 	"sync"
@@ -58,7 +57,7 @@ type Connection struct {
 	lastMessageMutex sync.Mutex
 
 	VerboseCallbackHandler bool
-	Log                    *log.Logger
+	Log                    Logger
 
 	stopped bool
 	quit    bool //User called Quit, do not reconnect.
